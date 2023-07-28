@@ -1,7 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 import uvicorn
-from models import ObjectDetectionPrediction
-from predictor import ObjectDetectorPredictor
+from app.models import ObjectDetectionPrediction
+from app.predictor import ObjectDetectorPredictor
 
 app = FastAPI(title="Vision Inference Service")     # crea una nueva app de fastapi
 

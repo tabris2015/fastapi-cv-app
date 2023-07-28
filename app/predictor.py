@@ -4,9 +4,9 @@ import numpy as np
 import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
-from models import BBox, Prediction, ObjectDetectionPrediction
+from app.models import BBox, Prediction, ObjectDetectionPrediction
 
-MODEL_PATH = "models/ssd_mobilenet_v2.tflite"
+MODEL_PATH = "nn_models/ssd_mobilenet_v2.tflite"
 
 
 class ObjectDetectorPredictor:
