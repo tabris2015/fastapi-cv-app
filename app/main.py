@@ -3,7 +3,7 @@ import uvicorn
 from app.models import ObjectDetectionPrediction
 from app.predictor import ObjectDetectorPredictor
 
-app = FastAPI(title="Vision Inference Service")     # crea una nueva app de fastapi
+app = FastAPI(title="Object Detection Service")     # crea una nueva app de fastapi
 
 od_predictor = ObjectDetectorPredictor()
 
@@ -18,6 +18,7 @@ def predict_object_detection(file: UploadFile = File(...)) -> ObjectDetectionPre
         )
     # imagen valida, realizamos la prediccion
     result = od_predictor.predict_file(file)
+    print(f"Encontrados {len(result.predictions)} objetos: {[(obj.class_name, obj.confidence) for obj in result.predictions]}")
     return result
 
 
